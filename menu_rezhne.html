@@ -4,15 +4,9 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="منوی دیجیتال آبمیوه بستنی ڕێژنه"
-    >
+    <meta name="description" content="منوی دیجیتال آبمیوه بستنی ڕێژنه">
 
     <title>آبمیوه بستنی ڕێژنه</title>
 
@@ -21,22 +15,21 @@
          تمام ظاهر پروژه با Tailwind ساخته شده است.
     ========================================================== -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="tailwindcss.js"></script> -->
 
     <!-- =========================================================
          Vazirmatn
     ========================================================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
 
-    <link
+    <!-- <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin
-    >
+    > -->
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- =========================================================
          Tailwind Configuration
@@ -159,27 +152,74 @@
             }
         };
     </script>
+
+    <!-- =========================================================
+         PRODUCT STATUS
+         استایل محصولات ناموجود
+    ========================================================== -->
+    <style>
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(.94);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes modalOut {
+            from {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(20px) scale(.95);
+            }
+        }
+
+        .animate-modalIn {
+            animation: modalIn .45s cubic-bezier(.2, .8, .2, 1) both;
+        }
+
+        .animate-modalOut {
+            animation: modalOut .3s ease both;
+        }
+
+        .product-unavailable {
+            cursor: not-allowed !important;
+        }
+
+        .product-unavailable img {
+            filter: grayscale(.75);
+        }
+
+        .product-unavailable .size-button:disabled {
+            pointer-events: none;
+        }
+    </style>
+
 </head>
 
 
-<body
-    class="
+<body class="
         min-h-screen
         overflow-x-hidden
         bg-[radial-gradient(circle_at_10%_15%,rgba(232,91,145,.16),transparent_25%),radial-gradient(circle_at_90%_20%,rgba(157,221,224,.25),transparent_28%),radial-gradient(circle_at_50%_100%,rgba(155,114,200,.16),transparent_30%),linear-gradient(135deg,#faf0f7_0%,#f7edf5_45%,#eefafa_100%)]
         font-vazir
         text-[#542d55]
-    "
->
+    ">
 
 
-<!-- =========================================================
+    <!-- =========================================================
      BACKGROUND DECORATION
 ========================================================== -->
 
-<div
-    aria-hidden="true"
-    class="
+    <div aria-hidden="true" class="
         pointer-events-none
         fixed
         -right-24
@@ -192,12 +232,9 @@
         opacity-40
         blur-[70px]
         animate-ambientFloat
-    "
-></div>
+    "></div>
 
-<div
-    aria-hidden="true"
-    class="
+    <div aria-hidden="true" class="
         pointer-events-none
         fixed
         -left-28
@@ -210,12 +247,9 @@
         opacity-40
         blur-[70px]
         animate-[ambientFloat_10s_ease-in-out_infinite_reverse]
-    "
-></div>
+    "></div>
 
-<div
-    aria-hidden="true"
-    class="
+    <div aria-hidden="true" class="
         pointer-events-none
         fixed
         bottom-[-180px]
@@ -228,17 +262,14 @@
         opacity-40
         blur-[70px]
         animate-[ambientFloat_12s_ease-in-out_infinite]
-    "
-></div>
+    "></div>
 
 
-<!-- =========================================================
+    <!-- =========================================================
      MAIN
 ========================================================== -->
 
-<main
-    id="pageContent"
-    class="
+    <main id="pageContent" class="
         mx-auto
         w-full
         max-w-6xl
@@ -246,24 +277,20 @@
         py-10
         sm:px-5
         sm:py-14
-    "
->
+    ">
 
 
-    <!-- =====================================================
+        <!-- =====================================================
          HEADER
     ====================================================== -->
 
-    <section
-        class="
+        <section class="
             mb-10
             text-center
             sm:mb-14
-        "
-    >
+        ">
 
-        <div
-            class="
+            <div class="
                 inline-flex
                 animate-welcomeTitle
                 items-center
@@ -279,26 +306,22 @@
                 text-[#8a4d80]
                 shadow-sm
                 backdrop-blur-xl
-            "
-        >
+            ">
 
-            <span
-                class="
+                <span class="
                     h-2
                     w-2
                     animate-pulse
                     rounded-full
                     bg-[#e85b91]
-                "
-            ></span>
+                "></span>
 
-            تازه و خوشمزه، مخصوص شما
+                تازه و خوشمزه، مخصوص شما
 
-        </div>
+            </div>
 
 
-        <h1
-            class="
+            <h1 class="
                 mt-5
                 animate-welcomeTitle
                 text-3xl
@@ -307,68 +330,54 @@
                 text-[#592d58]
                 sm:text-4xl
                 md:text-5xl
-            "
-        >
+            ">
 
-            آبمیوه بستنی
+                آبمیوه بستنی
 
-            <span
-                class="
+                <span class="
                     bg-gradient-to-l
                     from-[#9b72c8]
                     via-[#e85b91]
                     to-[#d85d91]
                     bg-clip-text
                     text-transparent
-                "
-            >
-                ڕێژنه
-            </span>
+                ">
+                    ڕێژنه
+                </span>
 
-        </h1>
+            </h1>
 
 
-        <p
-            class="
+            <p class="
                 mt-4
                 text-sm
                 font-medium
                 text-[#805f7e]
                 sm:text-base
-            "
-        >
-            منوی دیجیتال ما را مشاهده کنید
-        </p>
+            ">
+                منوی دیجیتال ما را مشاهده کنید
+            </p>
 
-    </section>
+        </section>
 
 
-    <!-- =====================================================
+        <!-- =====================================================
          SEARCH + CATEGORY
     ====================================================== -->
 
-    <section
-        class="mb-8"
-    >
+        <section class="mb-8">
 
-        <!-- Search -->
+            <!-- Search -->
 
-        <div
-            class="
+            <div class="
                 relative
                 mx-auto
                 mb-5
                 max-w-2xl
-            "
-        >
+            ">
 
-            <input
-                id="menuSearch"
-                type="search"
-                autocomplete="off"
-                aria-label="جستجوی محصولات"
-                placeholder="جست‌وجوی نوشیدنی، بستنی، کیک..."
-                class="
+                <input id="menuSearch" type="search" autocomplete="off" aria-label="جستجوی محصولات"
+                    placeholder="جست‌وجوی نوشیدنی، بستنی، کیک..." class="
                     h-14
                     w-full
                     rounded-2xl
@@ -388,13 +397,11 @@
                     focus:border-[#e85b91]/30
                     focus:bg-white/80
                     focus:shadow-[0_20px_50px_rgba(232,91,145,.13)]
-                "
-            >
+                ">
 
-            <!-- Search SVG -->
+                <!-- Search SVG -->
 
-            <div
-                class="
+                <div class="
                     pointer-events-none
                     absolute
                     right-3
@@ -410,34 +417,22 @@
                     from-[#e85b91]
                     to-[#9b72c8]
                     text-white
-                "
-            >
+                ">
 
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"
-                    />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+                    </svg>
+
+                </div>
 
             </div>
 
-        </div>
 
+            <!-- Categories -->
 
-        <!-- Categories -->
-
-        <div
-            id="categoryFilters"
-            class="
+            <div id="categoryFilters" class="
                 flex
                 gap-2
                 overflow-x-auto
@@ -445,14 +440,9 @@
                 pb-2
                 [scrollbar-width:none]
                 [&::-webkit-scrollbar]:hidden
-            "
-        >
+            ">
 
-            <button
-                type="button"
-                data-category="all"
-                aria-pressed="true"
-                class="
+                <button type="button" data-category="all" aria-pressed="true" class="
                     category-btn
                     shrink-0
                     rounded-full
@@ -469,45 +459,36 @@
                     shadow-[0_8px_22px_rgba(232,91,145,.22)]
                     transition
                     duration-300
-                "
-            >
-                همه
-            </button>
+                ">
+                    همه
+                </button>
 
-        </div>
+            </div>
 
-    </section>
+        </section>
 
 
-    <!-- =====================================================
+        <!-- =====================================================
          PRODUCT GRID
     ====================================================== -->
 
-    <section
-        id="products"
-        aria-live="polite"
-        class="
+        <section id="products" aria-live="polite" class="
             grid
             grid-cols-1
             gap-5
             sm:grid-cols-2
             sm:gap-6
             lg:grid-cols-3
-        "
-    ></section>
+        "></section>
 
 
-    <!-- =====================================================
+        <!-- =====================================================
          NO RESULTS
     ====================================================== -->
 
-    <div
-        id="noResults"
-        class="hidden"
-    >
+        <div id="noResults" class="hidden">
 
-        <div
-            class="
+            <div class="
                 mt-6
                 rounded-[28px]
                 border
@@ -518,11 +499,9 @@
                 text-center
                 backdrop-blur-xl
                 shadow-card
-            "
-        >
+            ">
 
-            <div
-                class="
+                <div class="
                     mx-auto
                     mb-4
                     flex
@@ -535,68 +514,48 @@
                     from-[#e85b91]/15
                     to-[#9b72c8]/15
                     text-[#e85b91]
-                "
-            >
+                ">
 
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-8 w-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"
-                    />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+                    </svg>
 
-            </div>
+                </div>
 
-            <h3
-                class="
+                <h3 class="
                     text-lg
                     font-black
                     text-[#592d58]
-                "
-            >
-                چیزی پیدا نشد
-            </h3>
+                ">
+                    چیزی پیدا نشد
+                </h3>
 
-            <p
-                class="
+                <p class="
                     mt-2
                     text-sm
                     text-[#80617d]
-                "
-            >
-                نام محصول یا دسته‌بندی دیگری را امتحان کنید.
-            </p>
+                ">
+                    نام محصول یا دسته‌بندی دیگری را امتحان کنید.
+                </p>
+
+            </div>
 
         </div>
 
-    </div>
 
-
-    <!-- =====================================================
+        <!-- =====================================================
          LOAD MORE
     ====================================================== -->
 
-    <section
-        id="menuControls"
-        class="
+        <section id="menuControls" class="
             mt-10
             flex
             justify-center
-        "
-    >
+        ">
 
-        <button
-            id="toggleMenuButton"
-            type="button"
-            class="
+            <button id="toggleMenuButton" type="button" class="
                 inline-flex
                 items-center
                 gap-3
@@ -615,46 +574,30 @@
                 hover:-translate-y-1
                 hover:shadow-[0_18px_40px_rgba(232,91,145,.28)]
                 active:scale-95
-            "
-        >
+            ">
 
-            <span id="toggleMenuText">
-                نمایش کل منو
-            </span>
+                <span id="toggleMenuText">
+                    نمایش کل منو
+                </span>
 
-            <svg
-                id="toggleMenuIcon"
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 transition-transform duration-300"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19 9-7 7-7-7"
-                />
-            </svg>
+                <svg id="toggleMenuIcon" xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+                </svg>
 
-        </button>
+            </button>
 
-    </section>
+        </section>
 
-</main>
+    </main>
 
 
-<!-- =========================================================
+    <!-- =========================================================
      WELCOME MODAL
 ========================================================== -->
 
-<div
-    id="welcomeModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="welcomeTitle"
-    class="
+    <div id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" class="
         fixed
         inset-0
         z-[9999]
@@ -664,12 +607,9 @@
         bg-[#532d52]/35
         p-5
         backdrop-blur-md
-    "
->
+    ">
 
-    <div
-        id="welcomeDialog"
-        class="
+        <div id="welcomeDialog" class="
             relative
             w-full
             max-w-md
@@ -685,14 +625,11 @@
             text-center
             shadow-[0_35px_100px_rgba(82,45,85,.28)]
             sm:p-9
-        "
-    >
+        ">
 
-        <!-- Decorative glow -->
+            <!-- Decorative glow -->
 
-        <div
-            aria-hidden="true"
-            class="
+            <div aria-hidden="true" class="
                 pointer-events-none
                 absolute
                 -right-16
@@ -702,13 +639,10 @@
                 rounded-full
                 bg-[#e85b91]/15
                 blur-3xl
-            "
-        ></div>
+            "></div>
 
 
-        <div
-            aria-hidden="true"
-            class="
+            <div aria-hidden="true" class="
                 pointer-events-none
                 absolute
                 -bottom-20
@@ -718,14 +652,12 @@
                 rounded-full
                 bg-[#9b72c8]/15
                 blur-3xl
-            "
-        ></div>
+            "></div>
 
 
-        <!-- Icon -->
+            <!-- Icon -->
 
-        <div
-            class="
+            <div class="
                 relative
                 mx-auto
                 mb-6
@@ -740,81 +672,58 @@
                 to-[#9b72c8]
                 text-white
                 shadow-[0_15px_35px_rgba(232,91,145,.25)]
-            "
-        >
+            ">
 
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-10 w-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="1.6"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.5 8.5c-1.2-1.2-3.2-1.2-4.4 0-1.2 1.2-1.2 3.2 0 4.4l7.3 7.3a3.1 3.1 0 0 0 4.4 0l3.7-3.7a3.1 3.1 0 0 0 0-4.4l-5.3-5.3a3.1 3.1 0 0 0-4.4 0l-1.3 1.3Z"
-                />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.5 8.5c-1.2-1.2-3.2-1.2-4.4 0-1.2 1.2-1.2 3.2 0 4.4l7.3 7.3a3.1 3.1 0 0 0 4.4 0l3.7-3.7a3.1 3.1 0 0 0 0-4.4l-5.3-5.3a3.1 3.1 0 0 0-4.4 0l-1.3 1.3Z" />
 
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.5 8.5 6 6m7.5 2.5L16 6m-7 7 2 2m2-4 2 2"
-                />
-            </svg>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.5 8.5 6 6m7.5 2.5L16 6m-7 7 2 2m2-4 2 2" />
+                </svg>
 
-        </div>
+            </div>
 
 
-        <div class="relative">
+            <div class="relative">
 
-            <p
-                class="
+                <p class="
                     mb-2
                     text-sm
                     font-bold
                     text-[#e2558c]
-                "
-            >
-            منوی دیجیتال
-        </p>
+                ">
+                    منوی دیجیتال
+                </p>
 
-            <h2
-                id="welcomeTitle"
-                class="
+                <h2 id="welcomeTitle" class="
                     text-2xl
                     font-black
                     text-[#592d58]
                     sm:text-3xl
-                "
-            >
-                خوش آمدید 🌸
-            </h2>
+                ">
+                    خوش آمدید 🌸
+                </h2>
 
-            <p
-                class="
+                <p class="
                     mt-4
                     text-sm
                     font-medium
                     leading-8
                     text-[#80617d]
-                "
-            >
-                به آبمیوه بستنی
-                <strong class="text-[#e2558c]">
-                    ڕێژنه
-                </strong>
-                خوش آمدید.
-                <br>
-                امیدواریم از انتخابتان لذت ببرید.
-            </p>
+                ">
+                    به آبمیوه بستنی
+                    <strong class="text-[#e2558c]">
+                        ڕێژنه
+                    </strong>
+                    خوش آمدید.
+                    <br>
+                    امیدواریم از انتخابتان لذت ببرید.
+                </p>
 
 
-            <button
-                id="welcomeButton"
-                type="button"
-                class="
+                <button id="welcomeButton" type="button" class="
                     mt-7
                     inline-flex
                     w-full
@@ -836,989 +745,1381 @@
                     hover:-translate-y-1
                     hover:shadow-[0_18px_40px_rgba(232,91,145,.3)]
                     active:scale-95
-                "
-            >
+                ">
 
-                مشاهده منو
+                    مشاهده منو
 
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="m5 12 14 0m-6-6 6 6-6 6"
-                    />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 14 0m-6-6 6 6-6 6" />
+                    </svg>
 
-            </button>
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
-
-<!-- =========================================================
+    <!-- =========================================================
      APPLICATION
 ========================================================== -->
+    <!-- <script src="./js/app.js"></script> -->
 
-<script>
+    <script>
 
-    /*
-    ============================================================
-    CONFIGURATION
-    ============================================================
 
-    تنظیمات اصلی برنامه در یک نقطه نگهداری می‌شوند.
-    بنابراین در آینده تغییر تعداد محصولات اولیه بسیار ساده است.
-    */
+        /* ============================================================
+           MENU DATA
+        ============================================================ */
 
-    const APP_CONFIG = {
+        const MENU_ITEMS = [
 
-        INITIAL_VISIBLE_PRODUCTS: 15,
+            /* --------------------------------------------------------
+               قهوه و نوشیدنی گرم
+            -------------------------------------------------------- */
 
-        SCROLL_BEHAVIOR: 'smooth',
-
-        /*
-         * زمان کوتاه برای اینکه DOM فرصت Render داشته باشد.
-         */
-        EXPAND_SCROLL_DELAY: 80,
-
-        /*
-         * تصاویر fallback در صورت خراب بودن URL اصلی.
-         */
-        FALLBACK_IMAGE:
-            'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85'
-    };
-
-
-    /*
-    ============================================================
-    MENU DATA
-    ============================================================
-    */
-
-    const MENU_ITEMS = [
-
-        /*
-        --------------------------------------------------------
-        قهوه و نوشیدنی گرم
-        --------------------------------------------------------
-        */
-
-        {
-            name: "قهوه",
-            category: "قهوه و نوشیدنی گرم",
-            image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیر داغ",
-            category: "قهوه و نوشیدنی گرم",
-            image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیر عکس",
-            category: "قهوه و نوشیدنی گرم",
-            image: "https://images.unsplash.com/photo-1544776527-2f3c5f52e4b1?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیرکاکائو",
-            category: "قهوه و نوشیدنی گرم",
-            image: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیر قهوه",
-            category: "قهوه و نوشیدنی گرم",
-            image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "هات چاکلت",
-            category: "قهوه و نوشیدنی گرم",
-            image: "https://images.unsplash.com/photo-1542990253-0b8c4c6d4a0f?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کاپوچینو",
-            category: "قهوه و نوشیدنی گرم",
-            image: "https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        آبمیوه طبیعی
-        --------------------------------------------------------
-        */
-
-        {
-            name: "آب انار طبیعی",
-            category: "آبمیوه طبیعی",
-            image: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آب پرتقال طبیعی",
-            category: "آبمیوه طبیعی",
-            image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آب هویج طبیعی",
-            category: "آبمیوه طبیعی",
-            image: "https://images.unsplash.com/photo-1599318872600-7e6e4f4b7a2f?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آب سیب طبیعی",
-            category: "آبمیوه طبیعی",
-            image: "https://images.unsplash.com/photo-1579613832125-5d34a13ffe2a?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        شیر و نوشیدنی
-        --------------------------------------------------------
-        */
-
-        {
-            name: "شیر موز",
-            category: "شیر و نوشیدنی",
-            image: "https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیرهرما",
-            category: "شیر و نوشیدنی",
-            image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیر موز مخصوص",
-            category: "شیر و نوشیدنی",
-            image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیرموز بستنی",
-            category: "شیر و نوشیدنی",
-            image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        نوشیدنی سرد
-        --------------------------------------------------------
-        */
-
-        {
-            name: "ذرت مکزیکی",
-            category: "نوشیدنی سرد",
-            image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آب انار",
-            category: "نوشیدنی سرد",
-            image: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آب پرتقال",
-            category: "نوشیدنی سرد",
-            image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "تخم شربت",
-            category: "نوشیدنی سرد",
-            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آب انبه",
-            category: "نوشیدنی سرد",
-            image: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        یخ در بهشت
-        --------------------------------------------------------
-        */
-
-        {
-            name: "آناناس یخ دربهشت",
-            category: "یخ در بهشت",
-            image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آلبالو یخ دربهشت",
-            category: "یخ در بهشت",
-            image: "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        کیک و دسر
-        --------------------------------------------------------
-        */
-
-        {
-            name: "کیک دبل چاکلت",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک موزی",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1588195538326-c5b1e8f80a10?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک خیس",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک نسکافه‌ای",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک پسته",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک زعفرانی",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک ترالیچه",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک هویج",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک خیس شکلاتی",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کیک یزدی",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "باقلوا",
-            category: "کیک و دسر",
-            image: "https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        بستنی و دسر
-        --------------------------------------------------------
-        */
-
-        {
-            name: "بستنی شکلاتی دستگاه",
-            category: "بستنی و دسر",
-            image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "بستنی‌های سنتی",
-            category: "بستنی و دسر",
-            image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "تیرامیسو",
-            category: "بستنی و دسر",
-            image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "پودینگ",
-            category: "بستنی و دسر",
-            image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "کاستر",
-            category: "بستنی و دسر",
-            image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "ژله چند رنگ",
-            category: "بستنی و دسر",
-            image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        شیک و آیس پک
-        --------------------------------------------------------
-        */
-
-        {
-            name: "شیک شکلاتی",
-            category: "شیک و آیس پک",
-            image: "https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیک موز",
-            category: "شیک و آیس پک",
-            image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "شیک نوتلا",
-            category: "شیک و آیس پک",
-            image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آیس پک موزی و شکلاتی",
-            category: "شیک و آیس پک",
-            image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "آیس پک وانیلی",
-            category: "شیک و آیس پک",
-            image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
-        },
-
-
-        /*
-        --------------------------------------------------------
-        میوه و ترکیبات
-        --------------------------------------------------------
-        */
-
-        {
-            name: "طالبی",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1579502804834-5f7b1f1b5d84?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "توت فرنگی",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "هویج",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "هویج بستنی",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "معجون",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "فالوده",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "فالوده بستنی",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "بستنی وانیلی",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "بستنی ساده",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "بستنی کره گردویی",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "بستنی میوه‌ای",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=900&q=85"
-        },
-
-        {
-            name: "بستنی زعفرانی",
-            category: "میوه و ترکیبات",
-            image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
-        }
-
-    ];
-
-
-    /*
-    ============================================================
-    PRICES
-    ============================================================
-    */
-
-    const PRODUCT_PRICES = {
-
-        "قهوه": [70, 90, 110],
-        "شیر داغ": [60, 80, 100],
-        "شیر عکس": [70, 90, 110],
-        "شیرکاکائو": [80, 100, 120],
-        "شیر قهوه": [80, 100, 120],
-        "هات چاکلت": [90, 110, 130],
-        "کاپوچینو": [90, 110, 130],
-
-        "آب انار طبیعی": [120, 150, 180],
-        "آب پرتقال طبیعی": [110, 140, 170],
-        "آب هویج طبیعی": [100, 130, 160],
-        "آب سیب طبیعی": [110, 140, 170],
-
-        "شیر موز": [100, 130, 160],
-        "شیرهرما": [110, 140, 170],
-        "شیر موز مخصوص": [130, 160, 190],
-        "شیرموز بستنی": [140, 170, 200],
-
-        "ذرت مکزیکی": [100, 130, 160],
-        "آب انار": [90, 120, 150],
-        "آب پرتقال": [80, 110, 140],
-        "تخم شربت": [70, 90, 110],
-        "آب انبه": [100, 130, 160],
-
-        "آناناس یخ دربهشت": [90, 120, 150],
-        "آلبالو یخ دربهشت": [90, 120, 150],
-
-        "کیک دبل چاکلت": [120, 150, 180],
-        "کیک موزی": [110, 140, 170],
-        "کیک خیس": [110, 140, 170],
-        "کیک نسکافه‌ای": [120, 150, 180],
-        "کیک پسته": [140, 170, 200],
-        "کیک زعفرانی": [130, 160, 190],
-        "کیک ترالیچه": [140, 170, 200],
-        "کیک هویج": [110, 140, 170],
-        "کیک خیس شکلاتی": [120, 150, 180],
-        "کیک یزدی": [60, 80, 100],
-        "باقلوا": [100, 130, 160],
-
-        "بستنی شکلاتی دستگاه": [90, 120, 150],
-        "بستنی‌های سنتی": [100, 130, 160],
-        "تیرامیسو": [130, 160, 190],
-        "پودینگ": [100, 130, 160],
-        "کاستر": [100, 130, 160],
-        "ژله چند رنگ": [80, 100, 120],
-
-        "شیک شکلاتی": [130, 160, 190],
-        "شیک موز": [130, 160, 190],
-        "شیک نوتلا": [150, 180, 210],
-        "آیس پک موزی و شکلاتی": [150, 180, 210],
-        "آیس پک وانیلی": [140, 170, 200],
-
-        "طالبی": [100, 130, 160],
-        "توت فرنگی": [110, 140, 170],
-        "هویج": [90, 120, 150],
-        "هویج بستنی": [120, 150, 180],
-        "معجون": [150, 180, 220],
-        "فالوده": [100, 130, 160],
-        "فالوده بستنی": [120, 150, 180],
-        "بستنی وانیلی": [80, 110, 140],
-        "بستنی ساده": [70, 100, 130],
-        "بستنی کره گردویی": [110, 140, 170],
-        "بستنی میوه‌ای": [100, 130, 160],
-        "بستنی زعفرانی": [110, 140, 170]
-    };
-
-
-    /*
-    ============================================================
-    APPLICATION STATE
-    ============================================================
-
-    تمام وضعیت UI در یک Object نگهداری می‌شود.
-    این کار توسعه نسخه‌های بعدی را بسیار ساده‌تر می‌کند.
-    */
-
-    const state = {
-
-        activeCategory: 'all',
-
-        search: '',
-
-        isExpanded: false,
-
-        selectedSizes: new Map()
-
-    };
-
-
-    /*
-    ============================================================
-    DOM REFERENCES
-    ============================================================
-    */
-
-    const DOM = {
-
-        products:
-            document.getElementById('products'),
-
-        search:
-            document.getElementById('menuSearch'),
-
-        categories:
-            document.getElementById('categoryFilters'),
-
-        noResults:
-            document.getElementById('noResults'),
-
-        toggleButton:
-            document.getElementById('toggleMenuButton'),
-
-        toggleText:
-            document.getElementById('toggleMenuText'),
-
-        toggleIcon:
-            document.getElementById('toggleMenuIcon'),
-
-        controls:
-            document.getElementById('menuControls'),
-
-        welcomeModal:
-            document.getElementById('welcomeModal'),
-
-        welcomeButton:
-            document.getElementById('welcomeButton')
-
-    };
-
-
-    /*
-    ============================================================
-    HELPERS
-    ============================================================
-    */
-
-    function formatPrice(price) {
-
-        return Number(price)
-            .toLocaleString('fa-IR');
-
-    }
-
-
-    function normalizeText(value) {
-
-        return String(value || '')
-            .trim()
-            .toLowerCase()
-            .replace(/ي/g, 'ی')
-            .replace(/ك/g, 'ک');
-
-    }
-
-
-    /*
-    ============================================================
-    FILTER ENGINE
-    ============================================================
-    */
-
-    function getFilteredProducts() {
-
-        const searchTerm =
-            normalizeText(state.search);
-
-        return MENU_ITEMS.filter(item => {
-
-            const categoryMatch =
-                state.activeCategory === 'all' ||
-                item.category === state.activeCategory;
-
-            const nameMatch =
-                !searchTerm ||
-                normalizeText(item.name)
-                    .includes(searchTerm) ||
-                normalizeText(item.category)
-                    .includes(searchTerm);
-
-            return categoryMatch && nameMatch;
-
-        });
-
-    }
-
-
-    /*
-    ============================================================
-    PRODUCT CARD CREATOR
-    ============================================================
-
-    نکته امنیتی مهم:
-
-    برای اطلاعات متغیر محصول از innerHTML استفاده نمی‌کنیم.
-    بنابراین اگر بعدها داده‌ها از API بیایند، سطح ریسک XSS کمتر می‌شود.
-    */
-
-    function createProductCard(item, index) {
-
-        const card =
-            document.createElement('article');
-
-        card.dataset.productIndex = index;
-
-        card.className = `
-            group
-            relative
-            isolate
-            overflow-hidden
-            rounded-[28px]
-            border
-            border-white/75
-            bg-gradient-to-br
-            from-white/80
-            to-white/45
-            p-3
-            shadow-[0_18px_50px_rgba(89,56,105,.10)]
-            backdrop-blur-[22px]
-            transition
-            duration-500
-            hover:-translate-y-2
-            hover:border-white
-            hover:shadow-[0_28px_70px_rgba(89,56,105,.17)]
-            animate-cardReveal
-        `;
-
-
-        /*
-        --------------------------------------------------------
-        Image wrapper
-        --------------------------------------------------------
-        */
-
-        const imageWrapper =
-            document.createElement('div');
-
-        imageWrapper.className = `
-            relative
-            overflow-hidden
-            rounded-[24px]
-            bg-gradient-to-br
-            from-white
-            to-[#eefafa]/70
-        `;
-
-
-        /*
-        Image
-        */
-
-        const image =
-            document.createElement('img');
-
-        image.className = `
-            h-[230px]
-            w-full
-            object-cover
-            transition
-            duration-700
-            ease-out
-            group-hover:scale-[1.07]
-        `;
-
-        image.src = item.image;
-
-        image.alt = item.name;
-
-        image.loading =
-            index < 6
-                ? 'eager'
-                : 'lazy';
-
-        image.decoding = 'async';
-
-
-        /*
-        Image error fallback
-        */
-
-        image.addEventListener(
-            'error',
-            () => {
-
-                if (
-                    image.src !==
-                    APP_CONFIG.FALLBACK_IMAGE
-                ) {
-
-                    image.src =
-                        APP_CONFIG.FALLBACK_IMAGE;
-                }
-
-            },
             {
-                once: true
+                name: "قهوه",
+                category: "قهوه و نوشیدنی گرم",
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیر داغ",
+                category: "قهوه و نوشیدنی گرم",
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیر عسل",
+                category: "قهوه و نوشیدنی گرم",
+                image: "https://images.unsplash.com/photo-1544776527-2f3c5f52e4b1?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیرکاکائو",
+                category: "قهوه و نوشیدنی گرم",
+                image: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیر قهوه",
+                category: "قهوه و نوشیدنی گرم",
+                image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "هات چاکلت",
+                category: "قهوه و نوشیدنی گرم",
+                image: "https://images.unsplash.com/photo-1542990253-0b8c4c6d4a0f?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کاپوچینو",
+                category: "قهوه و نوشیدنی گرم",
+                image: "https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=900&q=85"
+            },
+
+
+            /* --------------------------------------------------------
+               آبمیوه طبیعی
+            -------------------------------------------------------- */
+
+            {
+                name: "آب انار طبیعی",
+                category: "آبمیوه طبیعی",
+                image: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آب پرتقال طبیعی",
+                category: "آبمیوه طبیعی",
+                image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آب هویج طبیعی",
+                category: "آبمیوه طبیعی",
+                image: "https://images.unsplash.com/photo-1599318872600-7e6e4f4b7a2f?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آب سیب طبیعی",
+                category: "آبمیوه طبیعی",
+                image: "https://images.unsplash.com/photo-1579613832125-5d34a13ffe2a?auto=format&fit=crop&w=900&q=85"
+            },
+
+
+            /* --------------------------------------------------------
+               شیر و نوشیدنی
+            -------------------------------------------------------- */
+
+            {
+                name: "شیر موز",
+                category: "شیر و نوشیدنی",
+                image: "https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=900&q=85",
+                special: true
+            },
+
+            {
+                name: "شیرخرما",
+                category: "شیر و نوشیدنی",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیر موز مخصوص",
+                category: "شیر و نوشیدنی",
+                image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیر موز",
+                category: "شیر و نوشیدنی",
+                image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=85",
+                // available: false,
+            },
+
+            {
+                name: "شیرموز بستنی",
+                category: "شیر و نوشیدنی",
+                image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
+            },
+
+
+            /* --------------------------------------------------------
+               نوشیدنی سرد
+            -------------------------------------------------------- */
+
+            {
+                name: "ذرت مکزیکی",
+                category: "نوشیدنی سرد",
+                image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شربت انار",
+                category: "نوشیدنی سرد",
+                image: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آب پرتقال",
+                category: "نوشیدنی سرد",
+                image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "تخم شربت",
+                category: "نوشیدنی سرد",
+                image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آب انبه",
+                category: "نوشیدنی سرد",
+                image: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=900&q=85"
+            },
+
+
+            /* --------------------------------------------------------
+               یخ در بهشت
+            -------------------------------------------------------- */
+
+            {
+                name: "آناناس یخ دربهشت",
+                category: "یخ در بهشت",
+                image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آلبالو یخ دربهشت",
+                category: "یخ در بهشت",
+                image: "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=900&q=85"
+            },
+
+
+            /* --------------------------------------------------------
+               کیک و دسر
+            -------------------------------------------------------- */
+
+            {
+                name: "کیک دبل چاکلت",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک موزی",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1588195538326-c5b1e8f80a10?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک خیس",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک نسکافه‌ای",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک پسته",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک زعفرانی",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک ترالیچه",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک هویج",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک خیس شکلاتی",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کیک یزدی",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "باقلوا",
+                category: "کیک و دسر",
+                image: "https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=900&q=85"
+            },
+
+
+            /* --------------------------------------------------------
+               بستنی و دسر
+            -------------------------------------------------------- */
+
+            {
+                name: "بستنی شکلاتی دستگاه",
+                category: "بستنی و دسر",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "بستنی‌های سنتی",
+                category: "بستنی و دسر",
+                image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "تیرامیسو",
+                category: "بستنی و دسر",
+                image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "پودینگ",
+                category: "بستنی و دسر",
+                image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "کاستر",
+                category: "بستنی و دسر",
+                image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "ژله چند رنگ",
+                category: "بستنی و دسر",
+                image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85",
+                available: false
+            },
+
+
+            /* --------------------------------------------------------
+               شیک و آیس پک
+            -------------------------------------------------------- */
+
+            {
+                name: "شیک شکلاتی",
+                category: "شیک و آیس پک",
+                image: "https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیک موز",
+                category: "شیک و آیس پک",
+                image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "شیک نوتلا",
+                category: "شیک و آیس پک",
+                image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آیس پک موزی و شکلاتی",
+                category: "شیک و آیس پک",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "آیس پک وانیلی",
+                category: "شیک و آیس پک",
+                image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
+            },
+
+
+            /* --------------------------------------------------------
+               میوه و ترکیبات
+            -------------------------------------------------------- */
+
+            {
+                name: "طالبی",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1579502804834-5f7b1f1b5d84?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "توت فرنگی",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "هویج",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "هویج بستنی",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "معجون",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=85",
+
+                /* نمونه:
+                   اگر محصول خیلی پرطرفدار شد:
+                   special: true
+                */
+                special: true
+            },
+
+            {
+                name: "فالوده",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "فالوده بستنی",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "بستنی وانیلی",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "بستنی ساده",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=85",
+
+                /* نمونه محصول ناموجود */
+                available: false
+            },
+
+            {
+                name: "بستنی کره گردویی",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "بستنی میوه‌ای",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=900&q=85"
+            },
+
+            {
+                name: "بستنی زعفرانی",
+                category: "میوه و ترکیبات",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
             }
-        );
-
-
-        /*
-        --------------------------------------------------------
-        Category glass badge
-        --------------------------------------------------------
-        */
-
-        const badge =
-            document.createElement('div');
-
-        badge.className = `
-            absolute
-            right-3
-            top-3
-            rounded-full
-            border
-            border-white/50
-            bg-white/25
-            px-3
-            py-1.5
-            text-[11px]
-            font-bold
-            text-white
-            shadow-lg
-            backdrop-blur-xl
-        `;
-
-        badge.textContent =
-            item.category;
-
-
-        /*
-        --------------------------------------------------------
-        Image shine
-        --------------------------------------------------------
-        */
-
-        const shine =
-            document.createElement('div');
-
-        shine.className = `
-            pointer-events-none
-            absolute
-            inset-0
-            -translate-x-[120%]
-            bg-gradient-to-r
-            from-transparent
-            via-white/40
-            to-transparent
-            transition-transform
-            duration-700
-            group-hover:translate-x-[120%]
-        `;
-
-
-        /*
-        --------------------------------------------------------
-        Content
-        --------------------------------------------------------
-        */
-
-        const content =
-            document.createElement('div');
-
-        content.className =
-            'px-2 pb-2 pt-5';
-
-
-        /*
-        Header
-        */
-
-        const header =
-            document.createElement('div');
-
-        header.className = `
-            flex
-            items-center
-            justify-between
-            gap-3
-        `;
-
-
-        /*
-        Product name
-        */
-
-        const title =
-            document.createElement('h2');
-
-        title.className = `
-            text-lg
-            font-extrabold
-            text-[#582f57]
-        `;
-
-        title.textContent =
-            item.name;
-
-
-        /*
-        Price wrapper
-        */
-
-        const priceWrapper =
-            document.createElement('div');
-
-        priceWrapper.className = `
-            whitespace-nowrap
-            text-left
-        `;
-
-
-        const price =
-            document.createElement('span');
-
-        price.dataset.priceDisplay =
-            '';
-
-        price.className = `
-            text-xl
-            font-black
-            text-[#e2558c]
-        `;
-
-
-        const prices =
-            PRODUCT_PRICES[item.name] ||
-            [100, 130, 160];
-
-
-        const savedSize =
-            state.selectedSizes.get(item.name) ??
-            0;
-
-
-        price.textContent =
-            formatPrice(
-                prices[savedSize]
-            );
-
-
-        const priceUnit =
-            document.createElement('span');
-
-        priceUnit.className = `
-            text-xs
-            text-[#9a718f]
-        `;
-
-        priceUnit.textContent =
-            ' هزار';
-
-
-        /*
-        --------------------------------------------------------
-        Size buttons
-        --------------------------------------------------------
-        */
-
-        const sizeWrapper =
-            document.createElement('div');
-
-        sizeWrapper.className =
-            'mt-5 flex gap-2';
-
-
-        const sizeNames = [
-            'کوچک',
-            'متوسط',
-            'بزرگ'
         ];
 
 
-        sizeNames.forEach(
-            (sizeName, sizeIndex) => {
+        /* ============================================================
+           PRICES
+        ============================================================ */
 
-                const button =
-                    document.createElement('button');
+        const PRODUCT_PRICES = {
 
-                button.type =
-                    'button';
+            "قهوه": [100, 120],
+            "شیر داغ": [100, 125],
+            "شیر عسل": [125, 155],
+            "شیرکاکائو": [185, 200],
+            "شیر قهوه": [155, 200],
+            "هات چاکلت": [185, 220],
+            "کاپوچینو": [185, 225],
 
-                button.dataset.sizeIndex =
-                    sizeIndex;
 
-                button.dataset.productName =
-                    item.name;
+            "آب انار طبیعی": [330, 350],
+            "آب پرتقال طبیعی": [330, 350],
+            "آب هویج طبیعی": [150, 170],
+            "آب سیب طبیعی": [330, 350],
 
-                button.setAttribute(
-                    'aria-label',
-                    `${sizeName} ${item.name}`
+            "شیرخرما": [140, 160],
+            "شیر موز": [140, 160, 180, 200, 250],
+            "شیر موز مخصوص": [300, 350],
+            "شیرموز بستنی": [150, 170],
+
+            "ذرت مکزیکی": [220, 250],
+            "شربت انار": [120, 140],
+            "شربت پرتقال": [90, 100],
+            "تخم شربت": [90, 100],
+            "شربت انبه": [90, 100],
+
+            "یخ دربهشت آناناس": [120, 140],
+            "یخ دربهشت آلبالو": [120, 140],
+
+            "کیک دبل چاکلت": [200, 200],
+            "کیک موزی": [200, 200],
+            "کیک خیس": [200, 200],
+            "کیک نسکافه‌ای": [200, 200],
+            "کیک پسته": [200, 200],
+            "کیک زعفرانی": [200, 200],
+            "کیک ترالیچه": [200, 200],
+            "کیک هویج": [200, 200],
+            "کیک خیس شکلاتی": [200, 200],
+            "کیک یزدی": [50, 50],
+            "باقلوا": [60, 60],
+
+            "بستنی شکلاتی دستگاه": [60, 65],
+            "بستنی‌های سنتی": [100, 150],
+            "تیرامیسو": [180, 180],
+            "پودینگ": [180, 180],
+
+            "کاستر": [100, 130],
+            "ژله چند رنگ": [80, 100],
+
+            "شیک شکلاتی": [240, 260],
+            "شیک موز": [240, 260],
+            "شیک نوتلا": [280, 300],
+
+            "آیس پک موزی و شکلاتی": [280, 300],
+            "آیس پک وانیلی": [280, 300],
+
+            "طالبی": [140, 160, 180, 200, 250],
+
+            "توت فرنگی": [110, 140],
+
+            "هویج": [150, 170, 190, 210, 260],
+
+            "هویج بستنی": [160, 180, 200, 220, 270],
+
+            "معجون": [500, 700],
+
+            "فالوده": [130, 140],
+            "فالوده بستنی": [140, 150],
+
+            "بستنی وانیلی": [100, 150],
+
+            "بستنی ساده": [100, 150],
+
+            "بستنی کره گردویی": [110, 140],
+            "بستنی میوه‌ای": [100, 150],
+            "بستنی زعفرانی": [100, 150]
+        };
+        /* ============================================================
+           CONFIGURATION
+        ============================================================ */
+
+        const APP_CONFIG = {
+            INITIAL_VISIBLE_PRODUCTS: 15,
+            SCROLL_BEHAVIOR: 'smooth',
+            EXPAND_SCROLL_DELAY: 80,
+
+            FALLBACK_IMAGE:
+                'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85'
+        };
+
+
+        /* ============================================================
+           MENU DATA
+           ------------------------------------------------------------
+           MENU_ITEMS خودت را دقیقاً اینجا قرار بده.
+           
+           برای وضعیت محصول:
+           
+           available: false
+           => ناموجود
+        
+           special: true
+           => ویژه
+        ============================================================ */
+
+        // const MENU_ITEMS = [
+        //     {
+        //         name: "معجون",
+        //         category: "میوه و ترکیبات",
+        //         image: "...",
+        //         available: false,
+        //         special: true
+        //     }
+        // ];
+
+
+        /* ============================================================
+           PRICES
+           ------------------------------------------------------------
+           تعداد قیمت کاملاً آزاد است:
+        
+           [200]
+           => فقط یک قیمت
+        
+           [200, 200]
+           => فقط یک قیمت
+        
+           [140, 160]
+           => کوچک / بزرگ
+        
+           [140, 160, 180]
+           => کوچک / متوسط / بزرگ
+        
+           [140, 160, 180, 200, 230, 250]
+           => ۶ اندازه
+        ============================================================ */
+
+        // const PRODUCT_PRICES = {
+        //     "قهوه": [100, 120],
+        //     "کیک دبل چاکلت": [200],
+        //     "شیک نوتلا": [280, 300],
+        //     "معجون": [500, 700]
+        // };
+
+
+        /* ============================================================
+           APPLICATION STATE
+        ============================================================ */
+
+        const state = {
+            activeCategory: 'all',
+
+            search: '',
+
+            categoryBeforeSearch: 'all',
+
+            isSearching: false,
+
+            isExpanded: false,
+
+            /*
+             * ذخیره سایز انتخاب‌شده برای هر محصول
+             */
+            selectedSizes: new Map()
+        };
+
+
+        /* ============================================================
+           DOM REFERENCES
+        ============================================================ */
+
+        let DOM = {};
+
+
+        /* ============================================================
+           HELPERS
+        ============================================================ */
+
+        /*
+         * تبدیل قیمت به عدد فارسی
+         */
+        function formatPrice(price) {
+            const number = Number(price);
+
+            if (!Number.isFinite(number)) {
+                return '';
+            }
+
+            return number.toLocaleString('fa-IR');
+        }
+
+
+        /*
+         * نرمال‌سازی متن فارسی برای جستجو
+         *
+         * شیرموز
+         * شیر موز
+         * شیر‌موز
+         * شیر  موز
+         *
+         * همگی یکسان در نظر گرفته می‌شوند.
+         */
+        function normalizeText(value) {
+            return String(value ?? '')
+                .toLowerCase()
+
+                // Arabic -> Persian
+                .replace(/ي/g, 'ی')
+                .replace(/ى/g, 'ی')
+                .replace(/ك/g, 'ک')
+
+                // نیم‌فاصله
+                .replace(/\u200c/g, '')
+
+                // کشیده
+                .replace(/ـ/g, '')
+
+                // فاصله‌ها
+                .replace(/\s+/g, '')
+
+                .trim();
+        }
+
+
+        /*
+         * تبدیل اعداد عربی/فارسی به انگلیسی
+         */
+        function normalizeDigits(value) {
+            return String(value ?? '')
+                .replace(/[۰-۹]/g, digit =>
+                    String('۰۱۲۳۴۵۶۷۸۹'.indexOf(digit))
+                )
+                .replace(/[٠-٩]/g, digit =>
+                    String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit))
+                );
+        }
+
+
+        /*
+         * گرفتن قیمت محصول
+         *
+         * اول اسم دقیق بررسی می‌شود.
+         * سپس نام نرمال‌شده بررسی می‌شود.
+         */
+        function getProductPrices(item) {
+
+            if (!item || !item.name) {
+                return [];
+            }
+
+            /*
+             * اسم دقیق
+             */
+            const exactPrices =
+                PRODUCT_PRICES[item.name];
+
+            if (Array.isArray(exactPrices)) {
+                return exactPrices
+                    .map(Number)
+                    .filter(Number.isFinite);
+            }
+
+
+            /*
+             * اسم نرمال‌شده
+             *
+             * مثلاً:
+             * شیر موز
+             * شیرموز
+             */
+            const normalizedProductName =
+                normalizeText(item.name);
+
+
+            const matchingKey =
+                Object.keys(PRODUCT_PRICES)
+                    .find(key =>
+                        normalizeText(key) === normalizedProductName
+                    );
+
+
+            if (matchingKey) {
+                return PRODUCT_PRICES[matchingKey]
+                    .map(Number)
+                    .filter(Number.isFinite);
+            }
+
+
+            /*
+             * هیچ قیمتی ثبت نشده
+             */
+            return [];
+        }
+
+
+        /*
+         * حذف قیمت‌های تکراری پشت سر هم
+         *
+         * [200, 200] => [200]
+         *
+         * ولی:
+         * [100, 200, 100]
+         * همچنان سه قیمت دارد.
+         */
+        function getUniquePrices(prices) {
+
+            return [...new Set(
+                prices.map(Number)
+                    .filter(Number.isFinite)
+            )];
+        }
+
+
+        /*
+         * تشخیص تعداد سایزها
+         */
+        function getSizeNames(priceCount) {
+
+            const names = [
+                'کوچک',
+                'متوسط',
+                'بزرگ',
+                'خیلی بزرگ',
+                'ویژه',
+                'پلاس'
+            ];
+
+            return names.slice(0, priceCount);
+        }
+
+
+        /*
+         * آیا محصول چند قیمت دارد؟
+         */
+        function hasMultiplePrices(prices) {
+            return getUniquePrices(prices).length > 1;
+        }
+
+
+        /*
+         * قیمت قابل نمایش
+         */
+        function getDisplayPrice(prices, selectedIndex = 0) {
+
+            const uniquePrices =
+                getUniquePrices(prices);
+
+            if (!uniquePrices.length) {
+                return null;
+            }
+
+            const safeIndex =
+                Math.max(
+                    0,
+                    Math.min(
+                        selectedIndex,
+                        uniquePrices.length - 1
+                    )
                 );
 
-                button.setAttribute(
-                    'aria-pressed',
-                    savedSize === sizeIndex
-                        ? 'true'
-                        : 'false'
+            return uniquePrices[safeIndex];
+        }
+
+
+        /* ============================================================
+           FILTER ENGINE
+        ============================================================ */
+
+        function getFilteredProducts() {
+
+            const searchTerm =
+                normalizeText(state.search);
+
+
+            return MENU_ITEMS.filter(item => {
+
+                /*
+                 * وقتی جستجو فعال است،
+                 * دسته‌بندی نادیده گرفته می‌شود.
+                 */
+                const categoryMatch =
+                    state.isSearching ||
+                    state.activeCategory === 'all' ||
+                    item.category === state.activeCategory;
+
+
+                /*
+                 * جستجو هم در نام محصول
+                 * و هم در دسته انجام می‌شود.
+                 */
+                const nameMatch =
+                    !searchTerm ||
+
+                    normalizeText(item.name)
+                        .includes(searchTerm) ||
+
+                    normalizeText(item.category)
+                        .includes(searchTerm);
+
+
+                return categoryMatch && nameMatch;
+            });
+        }
+
+
+        /* ============================================================
+           PRODUCT CARD
+        ============================================================ */
+
+        function createProductCard(item, index) {
+
+            const card =
+                document.createElement('article');
+
+
+            /*
+             * وضعیت محصول
+             */
+            const isAvailable =
+                item.available !== false;
+
+            const isSpecial =
+                item.special === true;
+
+
+            /*
+             * قیمت‌ها
+             */
+            const prices =
+                getUniquePrices(
+                    getProductPrices(item)
                 );
 
-                button.className = `
+
+            /*
+             * چند قیمت واقعی؟
+             */
+            const hasSizes =
+                prices.length > 1;
+
+
+            /*
+             * سایز انتخاب‌شده
+             */
+            let savedSize =
+                state.selectedSizes.get(item.name) ?? 0;
+
+
+            /*
+             * جلوگیری از index اشتباه
+             */
+            if (
+                savedSize < 0 ||
+                savedSize >= prices.length
+            ) {
+                savedSize = 0;
+
+                state.selectedSizes.set(
+                    item.name,
+                    0
+                );
+            }
+
+
+            /* --------------------------------------------------------
+               CARD
+            -------------------------------------------------------- */
+
+            card.dataset.productIndex = index;
+            card.dataset.productName = item.name;
+            card.dataset.available =
+                isAvailable ? 'true' : 'false';
+
+
+            card.className = `
+        group
+        relative
+        isolate
+        overflow-hidden
+        rounded-[28px]
+        border
+        border-white/75
+        bg-gradient-to-br
+        from-white/80
+        to-white/45
+        p-3
+        shadow-[0_18px_50px_rgba(89,56,105,.10)]
+        backdrop-blur-[22px]
+        transition
+        duration-500
+        hover:-translate-y-2
+        hover:border-white
+        hover:shadow-[0_28px_70px_rgba(89,56,105,.17)]
+        animate-cardReveal
+        ${!isAvailable
+                    ? `
+                opacity-70
+                grayscale-[.35]
+                cursor-not-allowed
+                hover:translate-y-0
+            `
+                    : ''
+                }
+    `;
+
+
+            if (!isAvailable) {
+                card.classList.add(
+                    'product-unavailable'
+                );
+            }
+
+
+            /* --------------------------------------------------------
+               IMAGE WRAPPER
+            -------------------------------------------------------- */
+
+            const imageWrapper =
+                document.createElement('div');
+
+            imageWrapper.className = `
+        relative
+        overflow-hidden
+        rounded-[24px]
+        bg-gradient-to-br
+        from-white
+        to-[#eefafa]/70
+    `;
+
+
+            /* --------------------------------------------------------
+               IMAGE
+            -------------------------------------------------------- */
+
+            const image =
+                document.createElement('img');
+
+            image.className = `
+        h-[230px]
+        w-full
+        object-cover
+        transition
+        duration-700
+        ease-out
+        group-hover:scale-[1.07]
+    `;
+
+            image.src = item.image;
+            image.alt = item.name;
+
+            image.loading =
+                index < 6
+                    ? 'eager'
+                    : 'lazy';
+
+            image.decoding = 'async';
+
+
+            /*
+             * Fallback تصویر
+             */
+            image.addEventListener(
+                'error',
+                () => {
+
+                    if (
+                        image.src !==
+                        APP_CONFIG.FALLBACK_IMAGE
+                    ) {
+                        image.src =
+                            APP_CONFIG.FALLBACK_IMAGE;
+                    }
+
+                },
+                {
+                    once: true
+                }
+            );
+
+
+            /* --------------------------------------------------------
+               CATEGORY BADGE
+            -------------------------------------------------------- */
+
+            const badge =
+                document.createElement('div');
+
+            badge.className = `
+        absolute
+        right-3
+        top-3
+        rounded-full
+        border
+        border-white/50
+        bg-white/25
+        px-3
+        py-1.5
+        text-[11px]
+        font-bold
+        text-white
+        shadow-lg
+        backdrop-blur-xl
+    `;
+
+            badge.textContent =
+                item.category;
+
+
+            /* --------------------------------------------------------
+               STATUS BADGES
+            -------------------------------------------------------- */
+
+            const statusWrapper =
+                document.createElement('div');
+
+            statusWrapper.className = `
+        absolute
+        left-3
+        top-3
+        z-10
+        flex
+        flex-col
+        items-start
+        gap-2
+    `;
+
+
+            /*
+             * ویژه
+             */
+            if (isSpecial) {
+
+                const specialBadge =
+                    document.createElement('span');
+
+                specialBadge.className = `
+            rounded-full
+            border
+            border-white/70
+            bg-gradient-to-r
+            from-red-500
+            to-rose-600
+            px-3
+            py-1.5
+            text-[11px]
+            font-black
+            text-white
+            shadow-[0_8px_25px_rgba(220,38,38,.30)]
+            backdrop-blur-xl
+        `;
+
+                specialBadge.textContent =
+                    '★ ویژه';
+
+
+                statusWrapper.appendChild(
+                    specialBadge
+                );
+            }
+
+
+            /*
+             * ناموجود
+             */
+            if (!isAvailable) {
+
+                const unavailableBadge =
+                    document.createElement('span');
+
+                unavailableBadge.className = `
+            rounded-full
+            border
+            border-red-300/80
+            bg-red-600
+            px-3
+            py-1.5
+            text-[11px]
+            font-black
+            text-white
+            shadow-[0_8px_25px_rgba(220,38,38,.35)]
+        `;
+
+                unavailableBadge.textContent =
+                    'ناموجود';
+
+
+                statusWrapper.appendChild(
+                    unavailableBadge
+                );
+            }
+
+
+            /* --------------------------------------------------------
+               IMAGE SHINE
+            -------------------------------------------------------- */
+
+            const shine =
+                document.createElement('div');
+
+            shine.className = `
+        pointer-events-none
+        absolute
+        inset-0
+        -translate-x-[120%]
+        bg-gradient-to-r
+        from-transparent
+        via-white/40
+        to-transparent
+        transition-transform
+        duration-700
+        group-hover:translate-x-[120%]
+    `;
+
+
+            /* --------------------------------------------------------
+               CONTENT
+            -------------------------------------------------------- */
+
+            const content =
+                document.createElement('div');
+
+            content.className =
+                'px-2 pb-2 pt-5';
+
+
+            /* --------------------------------------------------------
+               HEADER
+            -------------------------------------------------------- */
+
+            const header =
+                document.createElement('div');
+
+            header.className = `
+        flex
+        items-center
+        justify-between
+        gap-3
+    `;
+
+
+            /* --------------------------------------------------------
+               PRODUCT TITLE
+            -------------------------------------------------------- */
+
+            const title =
+                document.createElement('h2');
+
+            title.className = `
+        min-w-0
+        text-lg
+        font-extrabold
+        text-[#582f57]
+    `;
+
+            title.textContent =
+                item.name;
+
+
+            /* --------------------------------------------------------
+               PRICE
+            -------------------------------------------------------- */
+
+            const priceWrapper =
+                document.createElement('div');
+
+            priceWrapper.className = `
+        whitespace-nowrap
+        text-left
+    `;
+
+
+            const price =
+                document.createElement('span');
+
+            price.dataset.priceDisplay =
+                '';
+
+
+            price.className = `
+        text-xl
+        font-black
+    `;
+
+
+            /*
+             * محصول ناموجود
+             */
+            if (!isAvailable) {
+
+                price.textContent =
+                    'ناموجود';
+
+                price.classList.add(
+                    'text-red-600'
+                );
+
+            }
+
+
+            /*
+             * محصول موجود ولی بدون قیمت
+             */
+            else if (!prices.length) {
+
+                price.textContent =
+                    'قیمت ثبت نشده';
+
+                price.classList.add(
+                    'text-gray-500',
+                    'text-sm'
+                );
+
+            }
+
+
+            /*
+             * محصول موجود با یک قیمت
+             */
+            else {
+
+                const displayPrice =
+                    getDisplayPrice(
+                        prices,
+                        savedSize
+                    );
+
+                price.textContent =
+                    formatPrice(
+                        displayPrice
+                    );
+
+                price.classList.add(
+                    'text-[#e2558c]'
+                );
+            }
+
+
+            const priceUnit =
+                document.createElement('span');
+
+            priceUnit.className = `
+        mr-1
+        text-xs
+        text-[#9a718f]
+    `;
+
+            priceUnit.textContent =
+                isAvailable && prices.length
+                    ? 'هزار'
+                    : '';
+
+
+            priceWrapper.appendChild(price);
+            priceWrapper.appendChild(priceUnit);
+
+
+            header.appendChild(title);
+            header.appendChild(priceWrapper);
+
+
+            /* --------------------------------------------------------
+               SIZE SELECTOR
+            -------------------------------------------------------- */
+
+            /*
+             * فقط وقتی بیشتر از یک قیمت متفاوت وجود داشته باشد
+             * دکمه‌های اندازه ساخته می‌شوند.
+             *
+             * [200]
+             * => هیچ دکمه‌ای
+             *
+             * [200, 200]
+             * => هیچ دکمه‌ای
+             *
+             * [140, 160]
+             * => دو دکمه
+             *
+             * [140, 160, 180]
+             * => سه دکمه
+             */
+            if (
+                isAvailable &&
+                hasSizes
+            ) {
+
+                const sizeWrapper =
+                    document.createElement('div');
+
+                sizeWrapper.className =
+                    'mt-5 grid gap-2';
+
+
+                /*
+                 * تعداد ستون بر اساس تعداد قیمت
+                 */
+                const columnCount =
+                    Math.min(prices.length, 3);
+
+                sizeWrapper.style.gridTemplateColumns =
+                    `repeat(${columnCount}, minmax(0, 1fr))`;
+
+
+                const sizeNames =
+                    getSizeNames(prices.length);
+
+
+                prices.forEach(
+                    (priceValue, sizeIndex) => {
+
+                        const button =
+                            document.createElement('button');
+
+                        button.type = 'button';
+
+                        button.dataset.sizeIndex =
+                            String(sizeIndex);
+
+                        button.dataset.productName =
+                            item.name;
+
+                        button.setAttribute(
+                            'aria-label',
+                            `${sizeNames[sizeIndex]} ${item.name}`
+                        );
+
+                        button.setAttribute(
+                            'aria-pressed',
+                            savedSize === sizeIndex
+                                ? 'true'
+                                : 'false'
+                        );
+
+
+                        button.className = `
                     size-button
-                    flex-1
+                    min-w-0
                     rounded-xl
+                    px-2
                     py-2.5
                     text-xs
                     font-bold
@@ -1828,356 +2129,493 @@
                 `;
 
 
-                if (
-                    savedSize === sizeIndex
-                ) {
+                        if (
+                            savedSize === sizeIndex
+                        ) {
 
-                    button.classList.add(
-                        'bg-gradient-to-br',
-                        'from-[#e85b91]',
-                        'to-[#9b72c8]',
-                        'text-white',
-                        'shadow-[0_8px_22px_rgba(232,91,145,.25)]'
-                    );
+                            button.classList.add(
+                                'bg-gradient-to-br',
+                                'from-[#e85b91]',
+                                'to-[#9b72c8]',
+                                'text-white',
+                                'shadow-[0_8px_22px_rgba(232,91,145,.25)]'
+                            );
 
-                } else {
+                        } else {
 
-                    button.classList.add(
-                        'bg-white/60',
-                        'text-[#7b5678]',
-                        'hover:-translate-y-0.5',
-                        'hover:bg-[#e85b91]/10',
-                        'hover:text-[#a64276]'
-                    );
-
-                }
-
-
-                button.textContent =
-                    sizeName;
+                            button.classList.add(
+                                'bg-white/60',
+                                'text-[#7b5678]',
+                                'hover:-translate-y-0.5',
+                                'hover:bg-[#e85b91]/10',
+                                'hover:text-[#a64276]'
+                            );
+                        }
 
 
-                sizeWrapper.appendChild(
-                    button
-                );
+                        /*
+                         * مثال:
+                         *
+                         * کوچک
+                         * ۱۴۰
+                         */
+                        const sizeLabel =
+                            document.createElement('span');
 
-            }
-        );
+                        sizeLabel.className =
+                            'block';
 
-
-        /*
-        --------------------------------------------------------
-        Assemble card
-        --------------------------------------------------------
-        */
-
-        imageWrapper.appendChild(image);
-
-        imageWrapper.appendChild(badge);
-
-        imageWrapper.appendChild(shine);
+                        sizeLabel.textContent =
+                            sizeNames[sizeIndex];
 
 
-        priceWrapper.appendChild(price);
+                        const sizePrice =
+                            document.createElement('span');
 
-        priceWrapper.appendChild(priceUnit);
-
-
-        header.appendChild(title);
-
-        header.appendChild(priceWrapper);
-
-
-        content.appendChild(header);
-
-        content.appendChild(sizeWrapper);
-
-
-        card.appendChild(imageWrapper);
-
-        card.appendChild(content);
-
-
-        return card;
-
-    }
-
-
-    /*
-    ============================================================
-    CATEGORY BUTTONS
-    ============================================================
-    */
-
-    function renderCategories() {
-
-        const categories = [
-            ...new Set(
-                MENU_ITEMS.map(
-                    item => item.category
-                )
-            )
-        ];
-
-
-        categories.forEach(
-            category => {
-
-                const button =
-                    document.createElement('button');
-
-                button.type =
-                    'button';
-
-                button.dataset.category =
-                    category;
-
-                button.setAttribute(
-                    'aria-pressed',
-                    'false'
-                );
-
-                button.className = `
-                    category-btn
-                    shrink-0
-                    rounded-full
-                    border
-                    border-white/80
-                    bg-white/60
-                    px-5
-                    py-2.5
-                    text-xs
-                    font-bold
-                    text-[#795675]
-                    backdrop-blur-xl
-                    transition
-                    duration-300
-                    hover:-translate-y-0.5
-                    hover:bg-white/85
-                    active:scale-95
+                        sizePrice.className = `
+                    mt-0.5
+                    block
+                    text-[10px]
+                    opacity-80
                 `;
 
-                button.textContent =
-                    category;
+                        sizePrice.textContent =
+                            `${formatPrice(priceValue)} هزار`;
 
 
-                DOM.categories.appendChild(
-                    button
+                        button.appendChild(sizeLabel);
+                        button.appendChild(sizePrice);
+
+                        sizeWrapper.appendChild(button);
+                    }
                 );
 
+
+                content.appendChild(header);
+                content.appendChild(sizeWrapper);
+
+            } else {
+
+                /*
+                 * محصول تک‌قیمت:
+                 * فقط Header
+                 */
+                content.appendChild(header);
             }
-        );
-
-    }
 
 
-    /*
-    ============================================================
-    UPDATE CATEGORY UI
-    ============================================================
-    */
+            /* --------------------------------------------------------
+               ASSEMBLE
+            -------------------------------------------------------- */
 
-    function updateCategoryUI() {
+            imageWrapper.appendChild(image);
+            imageWrapper.appendChild(badge);
+            imageWrapper.appendChild(statusWrapper);
+            imageWrapper.appendChild(shine);
 
-        DOM.categories
-            .querySelectorAll('.category-btn')
-            .forEach(button => {
-
-                const active =
-                    button.dataset.category ===
-                    state.activeCategory;
+            card.appendChild(imageWrapper);
+            card.appendChild(content);
 
 
-                button.setAttribute(
-                    'aria-pressed',
-                    active
-                        ? 'true'
-                        : 'false'
+            return card;
+        }
+
+
+        /* ============================================================
+           CATEGORY BUTTONS
+        ============================================================ */
+
+        function renderCategories() {
+
+            if (!DOM.categories) {
+                return;
+            }
+
+
+            /*
+             * اگر HTML از قبل دکمه «همه» دارد،
+             * آن را نگه می‌داریم.
+             *
+             * اگر ندارد، خودمان می‌سازیم.
+             */
+            let allButton =
+                DOM.categories.querySelector(
+                    '[data-category="all"]'
                 );
 
 
-                button.classList.toggle(
-                    'bg-gradient-to-br',
-                    active
+            if (!allButton) {
+
+                allButton =
+                    document.createElement('button');
+
+                allButton.type =
+                    'button';
+
+                allButton.dataset.category =
+                    'all';
+
+                allButton.className = `
+            category-btn
+            shrink-0
+            rounded-full
+            border
+            border-white/80
+            bg-white/60
+            px-5
+            py-2.5
+            text-xs
+            font-bold
+            text-[#795675]
+            backdrop-blur-xl
+            transition
+            duration-300
+            hover:-translate-y-0.5
+            hover:bg-white/85
+            active:scale-95
+        `;
+
+                allButton.textContent =
+                    'همه';
+
+                DOM.categories.prepend(
+                    allButton
                 );
-
-                button.classList.toggle(
-                    'from-[#e85b91]',
-                    active
-                );
-
-                button.classList.toggle(
-                    'to-[#9b72c8]',
-                    active
-                );
-
-                button.classList.toggle(
-                    'text-white',
-                    active
-                );
-
-                button.classList.toggle(
-                    'text-[#795675]',
-                    !active
-                );
-
-                button.classList.toggle(
-                    'shadow-[0_8px_22px_rgba(232,91,145,.22)]',
-                    active
-                );
-
-            });
-
-    }
+            }
 
 
-    /*
-    ============================================================
-    RENDER PRODUCTS
-    ============================================================
-    */
-
-    function renderProducts() {
-
-        const products =
-            getFilteredProducts();
-
-
-        /*
-        اگر جستجو یا فیلتر فعال باشد،
-        تعداد محصولات قابل نمایش بر اساس نتیجه است.
-        */
-
-        const visibleProducts =
-            state.isExpanded
-                ? products
-                : products.slice(
-                    0,
-                    APP_CONFIG.INITIAL_VISIBLE_PRODUCTS
-                );
+            /*
+             * دسته‌ها
+             */
+            const categories = [
+                ...new Set(
+                    MENU_ITEMS.map(
+                        item => item.category
+                    )
+                )
+            ];
 
 
-        DOM.products.replaceChildren();
-
-
-        visibleProducts.forEach(
-            (item, index) => {
-
-                DOM.products.appendChild(
-                    createProductCard(
-                        item,
-                        index
+            /*
+             * جلوگیری از duplicate
+             */
+            const existingCategories =
+                new Set(
+                    [...DOM.categories.querySelectorAll(
+                        '.category-btn'
+                    )].map(
+                        button =>
+                            button.dataset.category
                     )
                 );
 
-            }
-        );
+
+            categories.forEach(
+                category => {
+
+                    if (
+                        existingCategories.has(category)
+                    ) {
+                        return;
+                    }
 
 
-        /*
-        --------------------------------------------------------
-        No Result
-        --------------------------------------------------------
-        */
+                    const button =
+                        document.createElement('button');
 
-        const hasResults =
-            products.length > 0;
+                    button.type =
+                        'button';
 
+                    button.dataset.category =
+                        category;
 
-        DOM.noResults.classList.toggle(
-            'hidden',
-            hasResults
-        );
+                    button.setAttribute(
+                        'aria-pressed',
+                        'false'
+                    );
 
+                    button.className = `
+                category-btn
+                shrink-0
+                rounded-full
+                border
+                border-white/80
+                bg-white/60
+                px-5
+                py-2.5
+                text-xs
+                font-bold
+                text-[#795675]
+                backdrop-blur-xl
+                transition
+                duration-300
+                hover:-translate-y-0.5
+                hover:bg-white/85
+                active:scale-95
+            `;
 
-        /*
-        --------------------------------------------------------
-        Toggle button visibility
-        --------------------------------------------------------
-
-        اگر نتیجه کمتر از 15 باشد،
-        دکمه اصلاً نمایش داده نمی‌شود.
-        */
-
-        const canExpand =
-            products.length >
-            APP_CONFIG.INITIAL_VISIBLE_PRODUCTS;
-
-
-        DOM.controls.classList.toggle(
-            'hidden',
-            !canExpand
-        );
-
-
-        updateToggleButton();
-
-    }
+                    button.textContent =
+                        category;
 
 
-    /*
-    ============================================================
-    TOGGLE BUTTON UI
-    ============================================================
-    */
-
-    function updateToggleButton() {
-
-        if (state.isExpanded) {
-
-            DOM.toggleText.textContent =
-                'نمایش کمتر';
-
-
-            DOM.toggleIcon.style.transform =
-                'rotate(180deg)';
-
-        } else {
-
-            DOM.toggleText.textContent =
-                'نمایش کل منو';
-
-
-            DOM.toggleIcon.style.transform =
-                'rotate(0deg)';
-
+                    DOM.categories.appendChild(
+                        button
+                    );
+                }
+            );
         }
 
-    }
+
+        /* ============================================================
+           UPDATE CATEGORY UI
+        ============================================================ */
+
+        function updateCategoryUI() {
+
+            if (!DOM.categories) {
+                return;
+            }
 
 
-    /*
-    ============================================================
-    SEARCH
-    ============================================================
-    */
+            DOM.categories
+                .querySelectorAll(
+                    '.category-btn'
+                )
+                .forEach(button => {
 
-    DOM.search.addEventListener(
-        'input',
-        event => {
+                    const active =
+                        button.dataset.category ===
+                        state.activeCategory;
 
-            state.search =
-                event.target.value;
+
+                    button.setAttribute(
+                        'aria-pressed',
+                        active
+                            ? 'true'
+                            : 'false'
+                    );
+
+
+                    button.classList.toggle(
+                        'bg-gradient-to-br',
+                        active
+                    );
+
+                    button.classList.toggle(
+                        'from-[#e85b91]',
+                        active
+                    );
+
+                    button.classList.toggle(
+                        'to-[#9b72c8]',
+                        active
+                    );
+
+                    button.classList.toggle(
+                        'text-white',
+                        active
+                    );
+
+                    button.classList.toggle(
+                        'text-[#795675]',
+                        !active
+                    );
+
+                    button.classList.toggle(
+                        'shadow-[0_8px_22px_rgba(232,91,145,.22)]',
+                        active
+                    );
+                });
+        }
+
+
+        /* ============================================================
+           RENDER PRODUCTS
+        ============================================================ */
+
+        function renderProducts() {
+
+            if (!DOM.products) {
+                return;
+            }
+
+
+            const products =
+                getFilteredProducts();
+
 
             /*
-            هنگام جستجو، حالت Expand حفظ می‌شود.
-            */
+             * اگر Expand فعال نباشد،
+             * فقط ۱۵ محصول اول
+             */
+            const visibleProducts =
+                state.isExpanded
+                    ? products
+                    : products.slice(
+                        0,
+                        APP_CONFIG.INITIAL_VISIBLE_PRODUCTS
+                    );
+
+
+            DOM.products.replaceChildren();
+
+
+            visibleProducts.forEach(
+                (item, index) => {
+
+                    DOM.products.appendChild(
+                        createProductCard(
+                            item,
+                            index
+                        )
+                    );
+                }
+            );
+
+
+            /*
+             * No Result
+             */
+            if (DOM.noResults) {
+
+                DOM.noResults.classList.toggle(
+                    'hidden',
+                    products.length > 0
+                );
+            }
+
+
+            /*
+             * Show More
+             */
+            const canExpand =
+                products.length >
+                APP_CONFIG.INITIAL_VISIBLE_PRODUCTS;
+
+
+            if (DOM.controls) {
+
+                DOM.controls.classList.toggle(
+                    'hidden',
+                    !canExpand
+                );
+            }
+
+
+            updateToggleButton();
+        }
+
+
+        /* ============================================================
+           TOGGLE BUTTON
+        ============================================================ */
+
+        function updateToggleButton() {
+
+            if (
+                !DOM.toggleText ||
+                !DOM.toggleIcon
+            ) {
+                return;
+            }
+
+
+            if (state.isExpanded) {
+
+                DOM.toggleText.textContent =
+                    'نمایش کمتر';
+
+                DOM.toggleIcon.style.transform =
+                    'rotate(180deg)';
+
+            } else {
+
+                DOM.toggleText.textContent =
+                    'نمایش کل منو';
+
+                DOM.toggleIcon.style.transform =
+                    'rotate(0deg)';
+            }
+        }
+
+
+        /* ============================================================
+           SEARCH
+        ============================================================ */
+
+        function handleSearch(event) {
+
+            const nextSearch =
+                event.target.value;
+
+
+            const normalizedSearch =
+                normalizeText(nextSearch);
+
+
+            /*
+             * شروع جستجو
+             */
+            if (
+                normalizedSearch &&
+                !state.isSearching
+            ) {
+
+                /*
+                 * دسته فعلی را ذخیره می‌کنیم
+                 */
+                state.categoryBeforeSearch =
+                    state.activeCategory;
+
+
+                state.isSearching =
+                    true;
+
+
+                /*
+                 * از نظر UI روی «همه»
+                 */
+                state.activeCategory =
+                    'all';
+
+
+                updateCategoryUI();
+            }
+
+
+            /*
+             * پاک شدن جستجو
+             */
+            if (!normalizedSearch) {
+
+                if (state.isSearching) {
+
+                    state.activeCategory =
+                        state.categoryBeforeSearch;
+                }
+
+
+                state.isSearching =
+                    false;
+
+
+                updateCategoryUI();
+            }
+
+
+            state.search =
+                nextSearch;
+
 
             renderProducts();
-
         }
-    );
 
 
-    /*
-    ============================================================
-    CATEGORY FILTER
-    ============================================================
-    */
+        /* ============================================================
+           CATEGORY FILTER
+        ============================================================ */
 
-    DOM.categories.addEventListener(
-        'click',
-        event => {
+        function handleCategoryClick(event) {
 
             const button =
                 event.target.closest(
@@ -2190,15 +2628,36 @@
             }
 
 
+            /*
+             * اگر در حالت Search هستیم،
+             * با انتخاب دسته Search پاک می‌شود.
+             */
+            if (
+                state.isSearching ||
+                normalizeText(state.search)
+            ) {
+
+                state.search = '';
+
+                state.isSearching = false;
+
+                if (DOM.search) {
+                    DOM.search.value = '';
+                }
+            }
+
+
             state.activeCategory =
                 button.dataset.category;
 
 
-            /*
-            با تغییر دسته‌بندی از ابتدا 15 محصول
-            نمایش داده می‌شود.
-            */
+            state.categoryBeforeSearch =
+                state.activeCategory;
 
+
+            /*
+             * هر دسته از اول شروع شود.
+             */
             state.isExpanded =
                 false;
 
@@ -2206,20 +2665,14 @@
             updateCategoryUI();
 
             renderProducts();
-
         }
-    );
 
 
-    /*
-    ============================================================
-    SIZE SELECTOR
-    ============================================================
-    */
+        /* ============================================================
+           SIZE SELECTOR
+        ============================================================ */
 
-    DOM.products.addEventListener(
-        'click',
-        event => {
+        function handleSizeClick(event) {
 
             const button =
                 event.target.closest(
@@ -2243,6 +2696,17 @@
             }
 
 
+            /*
+             * محصول ناموجود
+             */
+            if (
+                card.dataset.available ===
+                'false'
+            ) {
+                return;
+            }
+
+
             const productName =
                 button.dataset.productName;
 
@@ -2253,16 +2717,48 @@
                 );
 
 
+            const item =
+                MENU_ITEMS.find(
+                    product =>
+                        product.name ===
+                        productName
+                );
+
+
+            if (!item) {
+                return;
+            }
+
+
             const prices =
-                PRODUCT_PRICES[
-                    productName
-                ] || [100, 130, 160];
+                getUniquePrices(
+                    getProductPrices(item)
+                );
 
 
             /*
-            State را به‌روزرسانی می‌کنیم.
-            */
+             * اگر محصول فقط یک قیمت دارد،
+             * اصلاً کاری انجام نده.
+             */
+            if (prices.length <= 1) {
+                return;
+            }
 
+
+            /*
+             * index معتبر
+             */
+            if (
+                sizeIndex < 0 ||
+                sizeIndex >= prices.length
+            ) {
+                return;
+            }
+
+
+            /*
+             * ذخیره انتخاب
+             */
             state.selectedSizes.set(
                 productName,
                 sizeIndex
@@ -2270,9 +2766,8 @@
 
 
             /*
-            Price
-            */
-
+             * تغییر قیمت
+             */
             const priceElement =
                 card.querySelector(
                     '[data-price-display]'
@@ -2287,9 +2782,8 @@
 
 
                 /*
-                Force reflow
-                */
-
+                 * Force Reflow
+                 */
                 void priceElement.offsetWidth;
 
 
@@ -2302,14 +2796,12 @@
                 priceElement.classList.add(
                     'animate-priceChange'
                 );
-
             }
 
 
             /*
-            Button states
-            */
-
+             * تغییر حالت دکمه‌ها
+             */
             card.querySelectorAll(
                 '[data-size-index]'
             ).forEach(
@@ -2329,6 +2821,9 @@
                     );
 
 
+                    /*
+                     * Active
+                     */
                     sizeButton.classList.toggle(
                         'bg-gradient-to-br',
                         active
@@ -2354,6 +2849,10 @@
                         active
                     );
 
+
+                    /*
+                     * Inactive
+                     */
                     sizeButton.classList.toggle(
                         'bg-white/60',
                         !active
@@ -2363,28 +2862,25 @@
                         'text-[#7b5678]',
                         !active
                     );
-
                 }
             );
-
         }
-    );
 
 
-    /*
-    ============================================================
-    SHOW MORE / SHOW LESS
-    ============================================================
-    */
+        /* ============================================================
+           SHOW MORE / SHOW LESS
+        ============================================================ */
 
-    DOM.toggleButton.addEventListener(
-        'click',
-        () => {
+        function handleToggleMenu() {
+
+            if (!DOM.toggleButton) {
+                return;
+            }
+
 
             /*
-            قبل از تغییر DOM موقعیت دقیق کاربر را نگه می‌داریم.
-            */
-
+             * موقعیت فعلی
+             */
             const previousScrollY =
                 window.scrollY;
 
@@ -2392,11 +2888,8 @@
             if (!state.isExpanded) {
 
                 /*
-                ------------------------------------------------
-                EXPAND
-                ------------------------------------------------
-                */
-
+                 * EXPAND
+                 */
                 state.isExpanded =
                     true;
 
@@ -2405,51 +2898,18 @@
 
 
                 /*
-                ابتدا Scroll را دقیقاً به محل قبلی برمی‌گردانیم.
-                بنابراین هنگام Render هیچ Jump ناخواسته‌ای رخ نمی‌دهد.
-                */
-
+                 * حفظ موقعیت
+                 */
                 window.scrollTo({
                     top: previousScrollY,
-                    behavior: 'instant'
+                    behavior: 'auto'
                 });
-
-
-                /*
-                سپس بعد از Render کامل،
-                به پایین لیست حرکت می‌کنیم.
-                */
-
-                requestAnimationFrame(
-                    () => {
-
-                        setTimeout(
-                            () => {
-
-                                DOM.products
-                                    .lastElementChild
-                                    ?.scrollIntoView({
-                                        behavior:
-                                            APP_CONFIG.SCROLL_BEHAVIOR,
-                                        block:
-                                            'end'
-                                    });
-
-                            },
-                            APP_CONFIG.EXPAND_SCROLL_DELAY
-                        );
-
-                    }
-                );
 
             } else {
 
                 /*
-                ------------------------------------------------
-                COLLAPSE
-                ------------------------------------------------
-                */
-
+                 * COLLAPSE
+                 */
                 state.isExpanded =
                     false;
 
@@ -2458,141 +2918,233 @@
 
 
                 /*
-                هنگام کم کردن لیست نیز Scroll
-                ناگهان به ابتدای صفحه نمی‌رود.
-                */
-
+                 * حفظ موقعیت
+                 */
                 window.scrollTo({
                     top: previousScrollY,
-                    behavior: 'instant'
+                    behavior: 'auto'
                 });
 
 
                 /*
-                کنترل منو دوباره قابل مشاهده باشد.
-                */
+                 * کمی بعد کنترل منو قابل مشاهده شود.
+                 */
+                if (DOM.controls) {
 
-                setTimeout(
-                    () => {
+                    setTimeout(
+                        () => {
 
-                        DOM.controls.scrollIntoView({
-                            behavior:
-                                APP_CONFIG.SCROLL_BEHAVIOR,
-                            block: 'center'
-                        });
+                            DOM.controls.scrollIntoView({
+                                behavior:
+                                    APP_CONFIG.SCROLL_BEHAVIOR,
 
-                    },
-                    50
-                );
+                                block: 'center'
+                            });
 
+                        },
+                        APP_CONFIG.EXPAND_SCROLL_DELAY
+                    );
+                }
+            }
+        }
+
+
+        /* ============================================================
+           WELCOME MODAL
+        ============================================================ */
+
+        function closeWelcomeModal() {
+
+            if (!DOM.welcomeModal) {
+                return;
             }
 
+
+            DOM.welcomeModal.classList.add(
+                'hidden'
+            );
+
+
+            document.body.classList.remove(
+                'overflow-hidden'
+            );
         }
-    );
 
 
-    /*
-    ============================================================
-    WELCOME MODAL
-    ============================================================
+        function initializeWelcomeModal() {
 
-    نکته:
-    هیچ sessionStorage استفاده نشده است.
-
-    بنابراین:
-    هر بار صفحه Refresh شود،
-    Modal دوباره نمایش داده می‌شود.
-
-    همچنین:
-    - کلیک بیرون Modal آن را نمی‌بندد.
-    - Escape آن را نمی‌بندد.
-    - فقط دکمه می‌تواند Modal را ببندد.
-    */
-
-    function closeWelcomeModal() {
-
-        DOM.welcomeModal.classList.add(
-            'hidden'
-        );
-
-        document.body.classList.remove(
-            'overflow-hidden'
-        );
-
-    }
+            if (!DOM.welcomeModal) {
+                return;
+            }
 
 
-    DOM.welcomeButton.addEventListener(
-        'click',
-        closeWelcomeModal
-    );
+            /*
+             * Modal در هر بار Load نمایش داده می‌شود.
+             */
+            DOM.welcomeModal.classList.remove(
+                'hidden'
+            );
 
 
-    /*
-    Modal در هر Load نمایش داده می‌شود.
-    */
-
-    function initializeWelcomeModal() {
-
-        DOM.welcomeModal.classList.remove(
-            'hidden'
-        );
-
-        document.body.classList.add(
-            'overflow-hidden'
-        );
-
-    }
+            document.body.classList.add(
+                'overflow-hidden'
+            );
+        }
 
 
-    /*
-    ============================================================
-    INITIALIZE
-    ============================================================
-    */
+        /* ============================================================
+           INITIALIZE
+        ============================================================ */
 
-    function initializeApp() {
+        function initializeApp() {
+
+            /*
+             * DOM References
+             */
+            DOM = {
+                products:
+                    document.getElementById(
+                        'products'
+                    ),
+
+                search:
+                    document.getElementById(
+                        'menuSearch'
+                    ),
+
+                categories:
+                    document.getElementById(
+                        'categoryFilters'
+                    ),
+
+                noResults:
+                    document.getElementById(
+                        'noResults'
+                    ),
+
+                toggleButton:
+                    document.getElementById(
+                        'toggleMenuButton'
+                    ),
+
+                toggleText:
+                    document.getElementById(
+                        'toggleMenuText'
+                    ),
+
+                toggleIcon:
+                    document.getElementById(
+                        'toggleMenuIcon'
+                    ),
+
+                controls:
+                    document.getElementById(
+                        'menuControls'
+                    ),
+
+                welcomeModal:
+                    document.getElementById(
+                        'welcomeModal'
+                    ),
+
+                welcomeButton:
+                    document.getElementById(
+                        'welcomeButton'
+                    )
+            };
+
+
+            /* --------------------------------------------------------
+               EVENT LISTENERS
+            -------------------------------------------------------- */
+
+            if (DOM.search) {
+
+                DOM.search.addEventListener(
+                    'input',
+                    handleSearch
+                );
+            }
+
+
+            if (DOM.categories) {
+
+                DOM.categories.addEventListener(
+                    'click',
+                    handleCategoryClick
+                );
+            }
+
+
+            if (DOM.products) {
+
+                DOM.products.addEventListener(
+                    'click',
+                    handleSizeClick
+                );
+            }
+
+
+            if (DOM.toggleButton) {
+
+                DOM.toggleButton.addEventListener(
+                    'click',
+                    handleToggleMenu
+                );
+            }
+
+
+            if (DOM.welcomeButton) {
+
+                DOM.welcomeButton.addEventListener(
+                    'click',
+                    closeWelcomeModal
+                );
+            }
+
+
+            /* --------------------------------------------------------
+               INITIAL RENDER
+            -------------------------------------------------------- */
+
+            renderCategories();
+
+            updateCategoryUI();
+
+            renderProducts();
+
+            initializeWelcomeModal();
+        }
+
+
+        /* ============================================================
+           START APP
+        ============================================================ */
 
         /*
-        دسته‌بندی‌ها
-        */
+         * این روش حتی اگر Script در head باشد
+         * هم مشکلی ایجاد نمی‌کند.
+         */
+        if (
+            document.readyState ===
+            'loading'
+        ) {
 
-        renderCategories();
+            document.addEventListener(
+                'DOMContentLoaded',
+                initializeApp,
+                {
+                    once: true
+                }
+            );
 
+        } else {
 
-        /*
-        محصولات
-        */
+            initializeApp();
+        }
+    </script>
 
-        renderProducts();
-
-
-        /*
-        دسته‌بندی فعال
-        */
-
-        updateCategoryUI();
-
-
-        /*
-        Welcome
-        */
-
-        initializeWelcomeModal();
-
-    }
-
-
-    /*
-    DOM آماده است چون Script انتهای Body قرار دارد.
-    */
-
-    initializeApp();
-
-</script>
-
-
-<!-- =========================================================
+    <!-- =========================================================
      IMPORTANT:
      برای اینکه Modal فقط با دکمه بسته شود،
      هیچ Event برای backdrop یا Escape تعریف نشده است.
@@ -2600,4 +3152,5 @@
 
 
 </body>
+
 </html>
